@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_close_window ()</l>
+<c></c>
+<l>read_image (image, 'particle')</l>
+<c></c>
+<l>get_image_size (image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width/2, Height/2, 'black', WindowID)</l>
+<c></c>
+<l>dev_set_draw ('margin')</l>
+<c></c>
+<l>dev_set_colored (12)</l>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<c>*高斯滤波</c>
+<l>gauss_filter (image, ImageGauss, 9)</l>
+<c></c>
+<c>*图像反选</c>
+<l>invert_image (ImageGauss, ImageInvert)</l>
+<c></c>
+<c></c>
+<c>*从图像里提取分水岭和盆地</c>
+<c>*第一个输入参数:输入图像</c>
+<c>*第二个输出参数:分割后的盆地区域</c>
+<c>*第三个输出参数:分割后的分水岭区域</c>
+<l>watersheds (ImageInvert, Basins, Watersheds)</l>
+<c></c>
+<l>dev_display (image)</l>
+<c></c>
+<l>dev_display (Basins)</l>
+<c></c>
+<c></c>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

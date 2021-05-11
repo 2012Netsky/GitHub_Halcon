@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_close_window ()</l>
+<c></c>
+<l>read_image (image, 'egypt1')</l>
+<c></c>
+<l>get_image_size (image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width, Height, 'black', WindowID)</l>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<c></c>
+<l>mean_image (image, ImageMean, 9, 9)</l>
+<c></c>
+<c>*用局部阈值来分割图像。</c>
+<c>*第一个输入参数:原始图像</c>
+<c>*第二个输入参数:滤波后的图像</c>
+<c>*第三个输出参数:分割后的区域</c>
+<c>*第四个输入参数:补偿值,范围在5到40之间比较有用</c>
+<c>*第五个输入参数:提取区域的类型，是亮的区域，或暗的区域，或相似区域</c>
+<l>dyn_threshold (image, ImageMean, RegionDynThresh, 15, 'not_equal')</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

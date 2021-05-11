@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_close_window ()</l>
+<c></c>
+<l>read_image (image, 'egypt1')</l>
+<c></c>
+<l>get_image_size (image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width, Height, 'black', WindowID)</l>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<c></c>
+<c></c>
+<c>*使用二值化阈值分割图像</c>
+<c>*如果LightDark =“light”，则选择灰度值大于或等于最佳阈值的所有像素。</c>
+<c>*如果LightDark =“dark”，则选择灰度值小于的最佳阈值de 所有像素。</c>
+<c>*通过选择Method ='max_separability'，可以调用灰度直方图的自动阈值。</c>
+<c>*该算法首先计算图像的直方图，然后使用统计矩来找到将像素划分为前景和背景的最佳阈值，</c>
+<c>*并使这两个类之间的可分离性最大化。 此方法仅适用于字节和uint2图像。</c>
+<l>binary_threshold (image, RegionMaxSeparabilityLight, 'max_separability', 'dark', UsedThreshold)</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

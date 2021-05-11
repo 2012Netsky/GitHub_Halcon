@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>read_image (image, 'egypt1')</l>
+<c></c>
+<l>threshold (image, Region, 0, 140)</l>
+<c></c>
+<l>fill_up (Region, RegionFillUp)</l>
+<c></c>
+<c></c>
+<l>dev_display (image)</l>
+<c></c>
+<l>dev_display (RegionFillUp)</l>
+<c></c>
+<c></c>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

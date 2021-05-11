@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_open_window (0, 0, 512, 512, 'black', WindowHandle)</l>
+<c></c>
+<l>read_image (Image, 'fabrik')</l>
+<c></c>
+<l>dev_set_colored (12)</l>
+<c></c>
+<l>threshold (Image, Region, 128, 255)</l>
+<c></c>
+<c></c>
+<l>connection (Region, ConnectedRegions)</l>
+<c></c>
+<c></c>
+<l>union1 (ConnectedRegions, RegionUnion)</l>
+<c></c>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<c></c>
+<l>dev_display (RegionUnion)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

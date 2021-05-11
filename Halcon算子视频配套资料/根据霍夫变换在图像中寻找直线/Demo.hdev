@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<c>*读取一张图像</c>
+<l>read_image (Image, '矩形')</l>
+<c></c>
+<l>get_image_size (Image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width, Height, 'black', WindowHandle)</l>
+<c></c>
+<c>*剪切指定矩形的图像</c>
+<l>rectangle1_domain (Image, ImageReduced, 76, 120.938, 464.875, 966.813)</l>
+<c></c>
+<c>* 寻找图像中矩形的边缘</c>
+<l>sobel_amp (ImageReduced, EdgeAmplitude, 'thin_sum_abs', 3)</l>
+<c></c>
+<c>* 设置输出对象颜色</c>
+<l>dev_set_color ('red')</l>
+<c></c>
+<c>* 对上面获取的边缘图像进行阈值操作</c>
+<l>threshold (EdgeAmplitude, Region, 10, 255)</l>
+<c></c>
+<c>* 对阈值后的区域进行连通处理</c>
+<l>connection (Region, ConnectedRegions)</l>
+<c></c>
+<c>* 根据面积过滤出图像中外矩形区域</c>
+<l>select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 2500, 99999)</l>
+<c></c>
+<c>* 霍夫变换来寻找区域中的直线</c>
+<l>hough_lines (SelectedRegions, 4, 50, 5, 5, Angle, Dist)</l>
+<c></c>
+<c>* 设置输出对象的颜色</c>
+<l>dev_set_color ('blue')</l>
+<c></c>
+<c>* 将直线转换为区域</c>
+<l>gen_region_hline (Regions, Angle, Dist)</l>
+<c></c>
+<c>* 根据方向特征来过滤想要的直线</c>
+<l>select_shape (Regions, SelectedRegions1, 'orientation', 'and', 1.5, 1.6)</l>
+<l>select_shape (Regions, SelectedRegions2, 'orientation', 'and', 0, 0.1)</l>
+<c></c>
+<c>* 显示图像和结果直线</c>
+<l>dev_display (Image)</l>
+<l>dev_display (SelectedRegions1)</l>
+<l>dev_display (SelectedRegions2)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

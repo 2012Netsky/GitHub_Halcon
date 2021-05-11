@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<l>count_seconds (T1)</l>
+<c></c>
+<l>read_image (Image, 'fabrik')</l>
+<c></c>
+<l>get_image_size (Image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width, Height, 'black', WindowHandle)</l>
+<c></c>
+<c></c>
+<l>count_seconds (T2)</l>
+<c></c>
+<l>RunTime := (T2 - T1)*1000</l>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<l>disp_message (WindowHandle, '程序运行的时间： '+RunTime+'  ms', 'window', 10, 10, 'black', 'true')</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<l>read_image (Image, 'fabrik')</l>
+<c></c>
+<c>*区域生长法将图像分割成相同强度的区域，并将其划分成大小为行*列的矩形。 为了确定两个相邻的矩形是否属于相同的区域，</c>
+<c>*仅使用其中心点的灰度值。 如果灰度值差小于等于公差，则将矩形合并到一个区域。</c>
+<l>regiongrowing (Image, Regions, 1, 1, 3, 1000)</l>
+<c></c>
+<c></c>
+<l>gen_empty_region (NoPixel)</l>
+<c></c>
+<c></c>
+<l>expand_region (Regions, NoPixel, RegionExpanded1, 'maximal', 'image')</l>
+<c></c>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<c></c>
+<l>dev_set_draw ('margin')</l>
+<c></c>
+<c></c>
+<l>dev_set_colored (6)</l>
+<c></c>
+<c></c>
+<l>dev_display (RegionExpanded1)</l>
+<c></c>
+<l>stop ()</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

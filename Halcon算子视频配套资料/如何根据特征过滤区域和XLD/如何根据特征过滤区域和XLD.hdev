@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_open_window (0, 0, 512, 512, 'black', WindowHandle)</l>
+<c></c>
+<c></c>
+<l>read_image (Image, 'fabrik')</l>
+<c></c>
+<c></c>
+<l>threshold (Image, Region, 128, 255)</l>
+<c></c>
+<c></c>
+<l>connection (Region, ConnectedRegions)</l>
+<c></c>
+<c></c>
+<c>*根据面积范围[8000, 9000]进行过滤</c>
+<l>dev_display (Image)</l>
+<l>select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 8000, 9000)</l>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<l>dev_display (SelectedRegions)</l>
+<c></c>
+<c>*算子select_shape_std将给定区域的形状与默认形状进行比较。 如果该区域具有相似的形状，则输出为相似的形状.</c>
+<l>select_shape_std (ConnectedRegions, SelectedRegions1, 'rectangle1', 90)</l>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<l>dev_display (SelectedRegions1)</l>
+<c></c>
+<c></c>
+<c>*算子select_shape_proto 过滤出彼此具有一定关系的区域。</c>
+<l>select_shape_proto (ConnectedRegions, SelectedRegions, SelectedRegions2, 'distance_center', 0, 200)</l>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<l>dev_display (SelectedRegions2)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

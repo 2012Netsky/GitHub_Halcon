@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>read_image(Image,'patras')</l>
+<c></c>
+<l>dev_display(Image)</l>
+<c></c>
+<l>rgb1_to_gray(Image,GrayImage)</l>
+<c></c>
+<c></c>
+<l>dev_display(GrayImage)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

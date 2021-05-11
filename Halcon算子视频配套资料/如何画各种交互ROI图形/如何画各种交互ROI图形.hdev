@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_open_window (0, 0, 512, 512, 'black', WindowHandle)</l>
+<c></c>
+<l>dev_set_draw ('margin')</l>
+<c></c>
+<c>*画圆</c>
+<l>draw_circle (WindowHandle, Row, Column, Radius)</l>
+<l>gen_circle (Circle, Row, Column, Radius)</l>
+<c></c>
+<c></c>
+<c>*画椭圆</c>
+<l>draw_ellipse (WindowHandle, Row1, Column1, Phi, Radius1, Radius2)</l>
+<l>gen_ellipse (Ellipse, Row1, Column1, Phi, Radius1, Radius2)</l>
+<c></c>
+<c></c>
+<c>*画不规则区域</c>
+<l>draw_polygon (PolygonRegion, WindowHandle)</l>
+<c></c>
+<c></c>
+<l>draw_line (WindowHandle, Row12, Column12, Row21, Column21)</l>
+<l>disp_line (WindowHandle, Row12, Column12, Row21, Column21)</l>
+<c></c>
+<c></c>
+<c>*画标准矩形</c>
+<l>draw_rectangle1 (WindowHandle, Row11, Column11, Row2, Column2)</l>
+<l>gen_rectangle1 (Rectangle, Row11, Column11, Row2, Column2)</l>
+<c></c>
+<c>*画仿射矩形</c>
+<l>draw_rectangle2 (WindowHandle, Row3, Column3, Phi1, Length1, Length2)</l>
+<l>gen_rectangle2 (Rectangle1, Row3, Column3, Phi1, Length1, Length2)</l>
+<c></c>
+<c>*画闭合区域</c>
+<l>draw_region (Region, WindowHandle)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<c>* 读取一张图像</c>
+<l>read_image (Image, 'fabrik')</l>
+<c></c>
+<c>* 获取图像大小</c>
+<l>get_image_size(Image, Width, Height)</l>
+<c></c>
+<c>* 获取区域里各点的坐标</c>
+<l>get_region_points(Image, Rows, Columns)</l>
+<c></c>
+<c>* 获取图像中每一点的像素值和坐标位置</c>
+<l>get_grayval(Image, Rows, Columns, Grayval)</l>
+<c></c>
+<c>* 创建一个空的矩阵</c>
+<l>create_matrix(Height,Width, 0, GrayMatrix) </l>
+<c></c>
+<c>* 为矩阵填充图像数据</c>
+<l>set_value_matrix(GrayMatrix,Rows,Columns, Grayval) </l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

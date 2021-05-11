@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c>*读取图像</c>
+<l>read_image (Image, 'fabrik')</l>
+<c></c>
+<c>*阈值图像</c>
+<l>threshold (Image, Region, 128, 255)</l>
+<c></c>
+<c>*连通处理</c>
+<l>connection (Region, ConnectedRegions)</l>
+<c></c>
+<c></c>
+<c>*根据面积过滤</c>
+<l>select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 8000, 9000)</l>
+<c></c>
+<c>* 用矩形结构元素膨胀</c>
+<l>dilation_rectangle1 (SelectedRegions, RegionDilation1, 3, 3)</l>
+<c></c>
+<c>* 用圆形结构元素膨胀</c>
+<l>dilation_circle (SelectedRegions, RegionDilation2, 2.5)</l>
+<c></c>
+<c>* 用矩形结构元素腐蚀</c>
+<l>erosion_rectangle1 (SelectedRegions, RegionErosion1, 3, 3)</l>
+<c></c>
+<c>* 用圆形结构元素腐蚀</c>
+<l>erosion_circle (SelectedRegions, RegionErosion2, 2.5)</l>
+<c></c>
+<c>* 用矩形结构元素开运算</c>
+<l>opening_rectangle1 (SelectedRegions, RegionOpening1, 10, 10)</l>
+<c></c>
+<c>* 用圆形结构元素开运算</c>
+<l>opening_circle (SelectedRegions, RegionOpening2, 2.5)</l>
+<c></c>
+<c></c>
+<c>*用矩形结构元素闭运算</c>
+<l>closing_rectangle1 (SelectedRegions, RegionClosing1, 10, 10)</l>
+<c></c>
+<c>*用圆形结构元素闭运算</c>
+<l>closing_circle (SelectedRegions, RegionClosing2, 3.5)</l>
+<c></c>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

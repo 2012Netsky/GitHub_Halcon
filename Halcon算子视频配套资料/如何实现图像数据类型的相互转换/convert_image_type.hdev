@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c>*读取图像</c>
+<l>read_image (Meningg5, 'meningg5')</l>
+<c></c>
+<c>*图像和高斯导数卷积，进行滤波</c>
+<l>derivate_gauss (Meningg5, Smoothed, 2, 'none')</l>
+<c></c>
+<c>*图像实数类型转换为BYTE(8位)类型</c>
+<l>convert_image_type (Smoothed, SmoothedByte, 'byte')</l>
+<c></c>
+<c>*分水岭算法</c>
+<l>watersheds (SmoothedByte, Basins, Watersheds)</l>
+<c></c>
+<c>*显示图像</c>
+<l>dev_display (Meningg5)</l>
+<c></c>
+<c>*设置区域的填充方式</c>
+<l>dev_set_draw ('margin')</l>
+<c></c>
+<c>*设置输出对象的显示颜色数目</c>
+<l>dev_set_colored (6)</l>
+<c></c>
+<c>* 显示分割后的盆地</c>
+<l>dev_display (Basins)</l>
+<c></c>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<c>* 将一个Tuple数组赋值给变量</c>
+<l>Tuple1 := [1,0,3,4,5,6,7,8,9]</l>
+<c></c>
+<c></c>
+<c>*给Tuple数组元素赋值</c>
+<l>Tuple1[1] := 2</l>
+<c></c>
+<c></c>
+<c>* 批量改变数组元素的值</c>
+<l>Tuple1[1,3,5] := 'abc'</l>
+<c></c>
+<c></c>
+<c>* 批量给Tuple数组赋值,其值为0到10000连续数值</c>
+<l>Tuple3 := [0:10000]</l>
+<c></c>
+<c>* 批量给Tuple数组赋值,其值为3到200连续数值,步长为1</c>
+<l>Tuple4 := [3:1:200]</l>
+<c></c>
+<c></c>
+<c>* 批量给Tuple数组赋值,其值为100到-100连续数值,步长为-10</c>
+<l>Tuple5 := [100:-10:-100]</l>
+<c></c>
+<c></c>
+<c></c>
+<c>* 对两个Tuple数组进行合并操作</c>
+<l>TupleInt1 := [3,1,2,9,1]</l>
+<l>TupleInt2 := [10,2,4,3,2]</l>
+<l>tuple_union (TupleInt1, TupleInt2, UnionInt)</l>
+<c></c>
+<c></c>
+<c></c>
+<c>* 对两个Tuple数组进行交集操作</c>
+<l>TupleInt3 := [3,1,2,9,1]</l>
+<l>TupleInt4 := [10,2,4,3,2]</l>
+<l>tuple_intersection (TupleInt3, TupleInt4, IntersectionInt)</l>
+<c></c>
+<c></c>
+<c></c>
+<c></c>
+<c>* 对Tuple数组元素进行替换</c>
+<l>OriginalTuple := [0,1,2,3,4,5]</l>
+<l>tuple_replace (OriginalTuple, [0,1], ['x','y'], Replaced)</l>
+<c></c>
+<c></c>
+<c></c>
+<c>* 向Tuple数组插入数值</c>
+<l>OriginalTuple := [0,1,2,3,4,5]</l>
+<l>tuple_insert (OriginalTuple, 3, 'x', InsertSingleValueA)</l>
+<c></c>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

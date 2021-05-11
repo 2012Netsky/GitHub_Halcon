@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<c>*读取一张图像</c>
+<l>read_image (Traffic1, 'traffic1')</l>
+<c></c>
+<c>*读取一张图像</c>
+<l>read_image (Traffic2, 'traffic2')</l>
+<c></c>
+<c>*将图像由byte类型转化为int2类型</c>
+<l>convert_image_type (Traffic1, ImageConverted1, 'int2')</l>
+<c></c>
+<c>*将图像由byte类型转化为int2类型</c>
+<l>convert_image_type (Traffic2, ImageConverted2, 'int2')</l>
+<c></c>
+<c>*将两个图像相减</c>
+<l>sub_image (ImageConverted1, ImageConverted2, ImageSub, 1, 0)</l>
+<c></c>
+<c></c>
+<c>*将有符号图像分割为正负两个区域</c>
+<c>*第一个输入参数:图像</c>
+<c>*第二个输出参数:分割后的正负区域</c>
+<c>*第三个输入参数:最小区域大小</c>
+<c>*第四个输入参数:最小灰度值大小</c>
+<c>*第五个输入参数:阈值</c>
+<l>dual_threshold (ImageSub, RegionDiff, 500, 20, 10)</l>
+<c></c>
+<c></c>
+<c></c>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>read_image (Image, '1')</l>
+<c></c>
+<c>*打开图像窗口</c>
+<l>dev_open_window (0, 0, 512, 512, 'black', WindowHandle)</l>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<l>get_image_size (Image, Width, Height)</l>
+<c></c>
+<c>*打开具有给定最小和最大范围的新图形窗口，以便保留给定图像的纵横比。</c>
+<c>*WidthLimit设置为-1，则使用以下默认值：[500,800]。</c>
+<c>*HeightLimit设置为-1，则使用以下默认值：[400,600]。</c>
+<c>*如果根据窗口宽高限制无法创建窗口，则忽略最小窗口大小的限制</c>
+<l>dev_open_window_fit_image (Image, 0, 0, -1, -1, WindowHandle1)</l>
+<c></c>
+<l>dev_set_window (WindowHandle1)</l>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<c>*打开具有给定最小和最大范围的新图形窗口，以便保留给定图像大小的宽高比</c>
+<c>*WidthLimit设置为-1，则使用以下默认值：[500,800]。</c>
+<c>*HeightLimit设置为-1，则使用以下默认值：[400,600]。</c>
+<c>*如果根据窗口宽高限制无法创建窗口，则忽略最小窗口大小的限制</c>
+<l>dev_open_window_fit_size (0, 0, Width, Height, -1, -1, WindowHandle2)</l>
+<c></c>
+<l>dev_set_window (WindowHandle2)</l>
+<c></c>
+<l>dev_display (Image)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

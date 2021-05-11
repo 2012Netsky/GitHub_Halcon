@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_close_window ()</l>
+<c></c>
+<l>read_image (image, 'particle')</l>
+<c></c>
+<l>get_image_size (image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width, Height, 'black', WindowID)</l>
+<c></c>
+<l>dev_set_draw ('margin')</l>
+<c></c>
+<l>dev_set_color ('green')</l>
+<c></c>
+<c></c>
+<l>threshold (image, Region, 128, 255)</l>
+<c></c>
+<c></c>
+<l>connection (Region, ConnectedRegions)</l>
+<c></c>
+<c></c>
+<l>select_shape_std (ConnectedRegions, SelectedRegions, 'max_area', 70)</l>
+<c></c>
+<c></c>
+<l>area_center (SelectedRegions, Area, Row, Column)</l>
+<c></c>
+<c></c>
+<l>dev_display (image)</l>
+<c></c>
+<c></c>
+<l>dev_display (SelectedRegions)</l>
+<c></c>
+<c></c>
+<l>set_tposition (WindowID, Height/2,0)</l>
+<c></c>
+<c></c>
+<l>write_string (WindowID, '面积最大区域的行坐标:'+Row+' 面积最大区域的列坐标: '+Column)</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

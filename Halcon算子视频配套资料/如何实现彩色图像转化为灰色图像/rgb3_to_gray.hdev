@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<l>read_image(Image,'patras')</l>
+<c></c>
+<c></c>
+<l>dev_display(Image)</l>
+<c></c>
+<c></c>
+<l>decompose3(Image, ImageR, ImageG, ImageB)</l>
+<c></c>
+<c></c>
+<l>rgb3_to_gray(ImageR,ImageG,ImageB,GrayImage)</l>
+<c></c>
+<c></c>
+<l>dev_display(GrayImage)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

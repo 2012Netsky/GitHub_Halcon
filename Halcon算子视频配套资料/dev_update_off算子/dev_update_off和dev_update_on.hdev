@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<c></c>
+<l>dev_update_off()</l>
+<c></c>
+<c></c>
+<l>read_image (Clip, 'clip')</l>
+<c></c>
+<c></c>
+<l>get_image_size (Clip, Width, Height)</l>
+<c></c>
+<c></c>
+<l>dev_close_window ()</l>
+<c></c>
+<c></c>
+<l>dev_open_window (0, 0, Width / 2, Height / 2, 'black', WindowID)</l>
+<c></c>
+<c></c>
+<l>dev_display (Clip)</l>
+<c></c>
+<c></c>
+<l>dev_update_on()</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

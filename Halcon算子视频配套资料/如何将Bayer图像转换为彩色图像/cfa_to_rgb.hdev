@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<c>*读取图像</c>
+<l>read_image (Image, 'patras')</l>
+<c></c>
+<c></c>
+<c>*获取图像大小</c>
+<l>get_image_size (Image, Width, Height)</l>
+<c></c>
+<c>*打开窗口</c>
+<l>dev_open_window (0, 0, Width, Height, 'black', WindowHandle)</l>
+<c></c>
+<c>*显示窗口</c>
+<l>dev_display (Image)</l>
+<c></c>
+<c>*模拟Bayer图像</c>
+<l>simulate_bayer_image (Image, ImageCFA)</l>
+<c></c>
+<c>*产生一个空的对象</c>
+<l>gen_empty_obj (RGBImage)</l>
+<c></c>
+<c>*Bayer图像转换为RGB图像</c>
+<l>cfa_to_rgb (ImageCFA, RGBImage, 'bayer_gb', 'bilinear')</l>
+<c></c>
+<c>*显示RGB图像</c>
+<l>dev_display (RGBImage)</l>
+<c>    </c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+<procedure name="simulate_bayer_image">
+<interface>
+<io>
+<par name="Image" base_type="iconic" dimension="0"/>
+</io>
+<oo>
+<par name="ImageCFA" base_type="iconic" dimension="0"/>
+</oo>
+</interface>
+<body>
+<l>get_image_size (Image, Width, Height)</l>
+<l>gen_checker_region (RegionChecker, Width, Height + 1, 1, 1)</l>
+<l>move_region (RegionChecker, MaskGreen, -1, 0)</l>
+<l>gen_grid_region (RegionGrid, 2, 2, 'points', Width, Height)</l>
+<l>move_region (RegionGrid, MaskBlue, 0, 1)</l>
+<l>move_region (RegionGrid, MaskRed, 1, 0)</l>
+<l>decompose3 (Image, ImageRed, ImageGreen, ImageBlue)</l>
+<l>reduce_domain (ImageRed, MaskRed, ImageMaskRed)</l>
+<l>reduce_domain (ImageGreen, MaskGreen, ImageMaskGreen)</l>
+<l>reduce_domain (ImageBlue, MaskBlue, ImageMaskBlue)</l>
+<l>gen_image_const (ImageCFA, 'byte', Width, Height)</l>
+<l>paint_gray (ImageMaskRed, ImageCFA, ImageCFA)</l>
+<l>paint_gray (ImageMaskGreen, ImageCFA, ImageCFA)</l>
+<l>paint_gray (ImageMaskBlue, ImageCFA, ImageCFA)</l>
+<l>return ()</l>
+</body>
+<docu id="simulate_bayer_image">
+<short lang="en_US">Simulate a Bayer image by sampling the channels of the original image</short>
+<parameters>
+<parameter id="Image"/>
+<parameter id="ImageCFA"/>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>

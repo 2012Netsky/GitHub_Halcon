@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>read_image(Image,'patras')</l>
+<c></c>
+<c></c>
+<l>dev_display(Image)</l>
+<c></c>
+<c></c>
+<l>decompose3(Image, Image1, Image2, Image3)</l>
+<c></c>
+<c></c>
+<l>trans_from_rgb(Image1,Image2,Image3,ImageH,ImageS,ImageV,'hsv')</l>
+<c></c>
+<c></c>
+<l>trans_to_rgb(ImageH,ImageS,ImageV,ImageR,ImageG,ImageB,'hsv')</l>
+<c></c>
+<c></c>
+<l>compose3(ImageR,ImageG,ImageB,Multichannel)</l>
+<c></c>
+<c></c>
+<l>dev_display(Multichannel)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

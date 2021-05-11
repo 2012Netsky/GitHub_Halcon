@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_close_window ()</l>
+<c></c>
+<l>read_image (image, 'alpha1')</l>
+<c></c>
+<l>get_image_size (image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width, Height, 'black', WindowID)</l>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<c></c>
+<c></c>
+<c>*阈值分割提取字符,主要应用是在明亮的纸上分割黑色字符单通道图像。</c>
+<c>*第一个输入参数:图像</c>
+<c>*第二个输入参数:要计算直方图的区域</c>
+<c>*第三个输出参数:分割的字符区域</c>
+<c>*第四个输入参数:直方图高斯平滑的Sigma</c>
+<c>*第五个输入参数:灰度值差异的百分比</c>
+<c>*第五个输出参数:输出计算出的阈值</c>
+<l>char_threshold (image, image, Characters, 6, 95, Threshold)</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

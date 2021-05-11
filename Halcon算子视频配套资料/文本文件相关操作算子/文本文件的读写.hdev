@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<c></c>
+<c>*******************************************************向文本文件写入字符串内容*************************************************************</c>
+<c></c>
+<l>read_image (Image, 'fabrik')</l>
+<c></c>
+<l>threshold (Image, Region, 0, 120)</l>
+<c></c>
+<l>area_center (Region, Area, Row, Column)</l>
+<c></c>
+<l>open_file ('area.txt', 'output', FileHandle)</l>
+<c></c>
+<l>fwrite_string (FileHandle, '面积是:'+Area + ' 像素\n')</l>
+<c></c>
+<l>fwrite_string (FileHandle, 'ROW:'+Row + ' Column'+Column+' \n')</l>
+<c></c>
+<l>close_file (FileHandle)</l>
+<c></c>
+<c></c>
+<c>*******************************************************读取文本文件字符串内容*************************************************************</c>
+<c></c>
+<l>open_file ('area.txt', 'input', FileHandle)</l>
+<c></c>
+<l>fread_line (FileHandle, OutLine, IsEOF1)</l>
+<l>while (IsEOF1 != 1)</l>
+<l>    fread_line (FileHandle, OutLine, IsEOF1)</l>
+<l>endwhile</l>
+<c></c>
+<c></c>
+<l>close_file (FileHandle)</l>
+<c></c>
+<c></c>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_close_window ()</l>
+<c></c>
+<l>read_image (image, 'label_01')</l>
+<c></c>
+<l>get_image_size (image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width/2, Height/2, 'black', WindowID)</l>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<c></c>
+<c></c>
+<c>*通过局部平均值和标准偏差进行阈值图像。试用场合不均匀的照明或噪声的图像</c>
+<c>*第一个输入参数:输入图像</c>
+<c>*第二个输出参数:分割后的区域</c>
+<c>*第三个输人参数:均值和标准差的掩码宽度</c>
+<c>*第四个输入参数:均值和标准差的掩码高度</c>
+<c>*第五个输入参数:标准差因子</c>
+<c>*第六个输入参数:最小灰度值和均值之差</c>
+<c>*第七个输入参数:提取区域的类型，是亮的区域，或暗的区域，或相似区域，或不相似区域</c>
+<l>var_threshold (image, Region, 15, 15, 1.0, 40, 'dark')</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

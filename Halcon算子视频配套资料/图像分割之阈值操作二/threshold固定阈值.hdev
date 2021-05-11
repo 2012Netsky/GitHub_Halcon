@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_close_window ()</l>
+<c></c>
+<l>read_image (image, 'egypt1')</l>
+<c></c>
+<l>get_image_size (image, Width, Height)</l>
+<c></c>
+<l>dev_open_window (0, 0, Width/2, Height/2, 'black', WindowID)</l>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<c></c>
+<c></c>
+<c>*用全局阈值分割图像,试用图像亮度均匀的场合</c>
+<c>*第一个输入参数:输入图像</c>
+<c>*第二个输出参数:分割后的区域</c>
+<c>*第三个输入参数:阈值下限</c>
+<c>*第四个输入参数:阈值上限</c>
+<l>threshold (image, Region, 0, 150)</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

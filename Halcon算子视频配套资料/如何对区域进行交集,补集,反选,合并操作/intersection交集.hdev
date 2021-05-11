@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_open_window (0, 0, 512, 512, 'black', WindowHandle)</l>
+<c></c>
+<l>gen_circle (Cricle1, 114.5, 127.5, 89.3588)</l>
+<c></c>
+<c></c>
+<l>gen_circle (Cricle2, 163.5, 171.5, 94.8472)</l>
+<c></c>
+<c></c>
+<l>intersection (Cricle1, Cricle2, RegionIntersection)</l>
+<c></c>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<l>dev_display (RegionIntersection)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.1" halcon_version="12.0.1">
+<procedure name="main">
+<interface/>
+<body>
+<l>dev_open_window (0, 0, 512, 512, 'black', WindowHandle)</l>
+<c></c>
+<c></c>
+<l>gen_circle (Cricle1, 224.5, 250.5, 131.727)</l>
+<c></c>
+<c></c>
+<l>dev_clear_window ()</l>
+<c></c>
+<c></c>
+<l>complement (Cricle1, RegionComplement)</l>
+<c></c>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>
